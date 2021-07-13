@@ -4,7 +4,7 @@
 /** /!!! core css Should not edit !!!/**/ 
 
 .lSSlideOuter {
-    position: relative;
+    position:relative;
     overflow: hidden;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -23,11 +23,10 @@
 }
 .lSSlideWrapper {
     max-width: 100%;
-    _margin:auto;
     overflow: hidden;
     position: relative;
-    padding: 50px 0;
-    background: #efefef;
+    padding:50px 0;
+    background:#efefef;
 }
 .lSSlideWrapper > .lightSlider:after {
     clear: both;
@@ -80,31 +79,45 @@
     margin: 10px 0 0;
     padding: 0;
     text-align: center;
-    width: 100%;
-    position: absolute;
-    bottom: 50px;
+    width:100%;
+    position:absolute;
+    bottom:50px;
 }
 .lSSlideOuter .lSPager.lSpg > li {
     cursor: pointer;
     display: inline-block;
-    padding: 0 5px;
+    _padding: 0 3px;
+    margin:0 3px;
+    position:relative;
+    width:40px;
+    height:3px;
+    background:#fff;
 }
 .lSSlideOuter .lSPager.lSpg > li a {
-    background-color: #222222;
+    background-color: #fff;
     border-radius: 30px;
     display: inline-block;
-    height: 8px;
+    height: 3px;
     overflow: hidden;
     text-indent: -999em;
-    width: 8px;
-    position: relative;
+    width: 40px;
+    position: absolute;
+    left:0;
     z-index: 99;
     -webkit-transition: all 0.5s linear 0s;
     transition: all 0.5s linear 0s;
 }
 .lSSlideOuter .lSPager.lSpg > li:hover a, .lSSlideOuter .lSPager.lSpg > li.active a {
-    background-color: #428bca;
+    background-color: #59ab6e;
 }
+
+.lSSlideOuter .lSPager.lSpg > li.active a{animation:fill-bar 4s 1;}
+
+@keyframes fill-bar{
+    0%{width:0;}
+    100%{width:100%;}
+}
+
 .lSSlideOuter .media {
     opacity: 0.8;
 }
@@ -156,9 +169,7 @@
 /* End of Gallery*/
 
 /* slider actions */
-.lSAction{width:100%; position: absolute; transform: translateY(-50%); max-width: 1450px; display: flex; 
-    justify-content: space-between;left: 50%; top: 50%; transform: translate(-50%, -50%);}
-
+.lSAction{position:absolute; width:100%; max-width:1450px; display:flex; justify-content: space-between; left:50%; top:50%; transform:translate(-50%, -50%);}
 .lSAction > a {
     _width: 32px;
     _display: block;
@@ -170,16 +181,14 @@
     z-index: 99;
     _margin-top: -16px;
     opacity: 0.5;
-    -webkit-transition: opacity 0.35s linear 0s;
+    _-webkit-transition: opacity 0.35s linear 0s;
     _transition: opacity 0.35s linear 0s;
 }
-
-.lSAction > a > i{font-size: 40px; font-weight: bold;}
+.lSAction > a > i{font-size:40px; font-weight:bold; transition:all 0.4s;}
 .lSAction > a:hover {
     opacity: 1;
 }
-.lSAction > a:hover i{color: #59ab6e;}
-
+.lSAction > a:hover i{color:#59ab6e;}
 .lSAction > .lSPrev {
     background-position: 0 0;
     left: 10px;
